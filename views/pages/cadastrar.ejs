@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <%- include('../partials/head'); %>
+        <style>
+            body {
+                min-width: 320px;
+                min-height: 240px;
+                background-color: #f8f9fa;
+                margin: 0px auto;
+                padding: 0px auto;
+                border: 1px solid green;
+                border-radius: 5vw;
+                font-size: 24px;
+                /* height: 100vh; */
+            }
+
+            .login-container {
+                /* height: 50vh; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px;
+            }
+
+            .login-card:hover {
+                background-color: #c0c0bd;
+                opacity: 75%;
+            }
+
+            .login-card {
+                border: 2px solid #f4cd1f;
+                /* Cor ciano */
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                justify-content: center;
+            }
+
+            .login-fields {
+                justify-content: center;
+                margin: 30px;
+                font-size: 24px;
+            }
+
+            .login-fields:hover {
+                opacity: 80%;
+                border: 1px dotted blue;
+            }
+
+            input {
+                font-size: 32px;
+            }
+
+            button {
+                font-size: 32px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-card">
+                <h3 style="text-align: center;">Login</h3>
+                <form action="/cadastrar" method="post">
+                    <div class="login-fields">
+                        <div><label for="username" style="width: 30vw;">Usuário:</label></div>
+                        <div><input type="text" id="username" name="username" required style="width: 30vw;"></div>
+                    </div>
+                    <div class="login-fields">
+                        <div><label for="password">Senha:</label></div>
+                        <div> <input type="password" id="password" name="password" required style="width: 30vw;"></div>
+                    </div>
+                    <div class="login-fields"><button type="submit">Cadastrar</button></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
