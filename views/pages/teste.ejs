@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Menu e Botão</title>
+    <!-- Inclusão do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu superior com logotipo e imagens -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="Logotipo" height="30"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Esquerda 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Esquerda 2</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Centro 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Centro 2</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Direita 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu Direita 2</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Botão com imagem à esquerda e texto à direita -->
+        <button class="btn btn-primary mt-4">
+            <img src="button-icon.png" alt="Ícone" class="mr-2">
+            Texto do Botão
+        </button>
+    </div>
+
+    <!-- Inclusão do Bootstrap JS (opcional, se você precisar de funcionalidades como o dropdown do navbar) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

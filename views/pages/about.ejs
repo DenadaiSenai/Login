@@ -9,6 +9,9 @@
 
     <header>
         <%- include('../partials/header'); %>
+        <% if(req.session.loggedin) { %>
+        <%- include('../partials/menu_dashboard'); %>
+        <% } %>        
     </header>
 
     <main>
@@ -23,6 +26,8 @@
             <div class="col-sm-4">
                 <div class="well">
                     <h3>Look I'm A Sidebar!</h3>
+                    <%- include('../partials/flex-images-wrap'); %>
+
                 </div>
             </div>
         </div>

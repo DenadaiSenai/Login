@@ -6,13 +6,19 @@
 
     <header>
         <%- include('../partials/header'); %>
+        <% if(req.session.loggedin) { %>
+        <%- include('../partials/menu_dashboard'); %>
+        <% } %>
+
     </header>
 
     <main style="max-height: 30%;">
         <div>
             <div>
-                <p><%= req.session.username %> você está em seu perfil.</p>
-                <p>Se quiser faça <a href="/logout">logout</a> ou navegue em suas opções.</p>                
+                <p>
+                    <%= req.session.username %> você está em seu perfil.
+                </p>
+                <p>Se quiser faça <a href="/logout">logout</a> ou navegue em suas opções.</p>
             </div>
         </div>
     </main>

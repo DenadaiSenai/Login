@@ -29,6 +29,10 @@ app.use(
     })
 );
 
+// Configuração de pastas com aquivos estáticos
+//app.use('/img', express.static(__dirname + '/img'))
+app.use('/', express.static(__dirname + '/static'))
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurar EJS como o motor de visualização
@@ -41,7 +45,8 @@ app.get('/', (req, res) => {
     res.render('pages/index', { req: req });
     console.log(`${req.session.username ? `Usuário ${req.session.username} logado no IP ${req.connection.remoteAddress}` : 'Usuário não logado.'}  `);
     //console.log(req.connection)
-;});
+    ;
+});
 
 // Página de login
 app.get('/login', (req, res) => {
@@ -145,6 +150,12 @@ app.get('/logout', (req, res) => {
         res.redirect('/');
     });
 });
+
+// Rota de teste
+app.get('/teste', (req, res) => {
+    res.render('pages/teste', { req: req });
+});
+
 
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
