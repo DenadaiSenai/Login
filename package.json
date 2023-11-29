@@ -1,13 +1,13 @@
 {
-  "name": "app",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Login",
+  "version": "1.0.1",
+  "description": "App exemplo em NodeJs com conexão a banco de dados (MySQL)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
