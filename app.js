@@ -33,23 +33,29 @@ app.use(
 //app.use('/img', express.static(__dirname + '/img'))
 app.use('/', express.static(__dirname + '/static'))
 
+// Engine do Express para processar o EJS (templates)
+// Lembre-se que para uso do EJS uma pasta (diretório) 'views', precisa existir na raiz do projeto.
+// E que todos os EJS serão processados a partir desta pasta
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurar EJS como o motor de visualização
 app.set('view engine', 'ejs');
 
-// Rota para a página de login
+// Configuração das rotas do servidor HTTP
+// A lógica ddo processamento de cada rota deve ser realizada aqui
 app.get('/', (req, res) => {
     // Passe a variável 'req' para o template e use-a nas páginas para renderizar partes do HTML conforme determinada condição
     // Por exemplo de o usuário estive logado, veja este exemplo no arquivo views/partials/header.ejs
     res.render('pages/index', { req: req });
+    // Caso haja necessidade coloque pontos de verificação para verificar pontos da sua logica de negócios
     console.log(`${req.session.username ? `Usuário ${req.session.username} logado no IP ${req.connection.remoteAddress}` : 'Usuário não logado.'}  `);
     //console.log(req.connection)
     ;
 });
 
-// Página de login
+// Rota para a página de login
 app.get('/login', (req, res) => {
+    // Quando for renderizar páginas pelo EJS, passe parametros para ele em forma de JSON
     res.render('pages/login', { req: req });
 });
 
@@ -86,6 +92,7 @@ app.get('/cadastrar', (req, res) => {
     }
 });
 
+// Rota para efetuar o cadastro de usuário no banco de dados
 app.post('/cadastrar', (req, res) => {
     const { username, password } = req.body;
 
@@ -144,7 +151,10 @@ app.get('/dashboard', (req, res) => {
     }
 });
 
-// Rota para fazer logout
+// Rota para processar a saida (logout) do usuário
+// Utilize-o para encerrar a sessão do usuário
+// Dica 1: Coloque um link de 'SAIR' na sua aplicação web
+// Dica 2: Você pode implementar um controle de tempo de sessão e encerrar a sessão do usuário caso este tempo passe.
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/');
@@ -158,5 +168,6 @@ app.get('/teste', (req, res) => {
 
 
 app.listen(3000, () => {
+    console.log('----Login (MySQL version)-----')
     console.log('Servidor rodando na porta 3000');
 });
