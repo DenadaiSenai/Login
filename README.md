@@ -22,7 +22,7 @@
 ---    
 ## A fazer (TO DO)
 - [x] Criptografrar as senhas no banco de dados
-- [ ] Configurar o banco de dados a usar somente comparação _'BINÁRIA'_, para evitar o efeito de _'cadastro duplicado'_
+- [x] Configurar o banco de dados a usar somente comparação _'BINÁRIA'_, para evitar o efeito de _'cadastro duplicado'_
 - [ ] Criar um campo extra na página de cadastro para verificar a senha antes de realizar o inclusão no banco de dados
 ---
 ## Ambiente de execução e teste
