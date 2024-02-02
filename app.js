@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
@@ -7,8 +7,8 @@ const app = express();
 // Configurar a conexão com o banco de dados MySQL
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: '',
+    user: 'phpmyadmin',
+    password: '123456789',
     database: 'mydb',
 });
 
@@ -31,7 +31,7 @@ app.use(
 
 // Configuração de pastas com aquivos estáticos
 //app.use('/img', express.static(__dirname + '/img'))
-app.use('/', express.static(__dirname + '/static'))
+app.use('/', express.static(__dirname + '/static'));
 
 // Engine do Express para processar o EJS (templates)
 // Lembre-se que para uso do EJS uma pasta (diretório) 'views', precisa existir na raiz do projeto.

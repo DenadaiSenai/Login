@@ -2,29 +2,29 @@
 <html lang="ptbr">
 
 <head>
-  <%- include('../partials/head'); %>
+    <%- include('../partials/head'); %>
 </head>
 
 <body class="container">
 
-  <header>
-    <%- include('../partials/header'); %>
-      <% if(req.session.loggedin) { %>
+    <header>
+        <%- include('../partials/header'); %>
+        <% if(req.session.loggedin) { %>
         <%- include('../partials/menu_dashboard'); %>
-          <% } %>
-  </header>
+        <% } %>
+    </header>
 
-  <main>
-    <div class="jumbotron">
-      <h1>Aplicação inicial utilizando templates com Express e EJS</h1>
-      <p>Seja bem-vindo e modifique conforme sua necessidade</p>
-      <!-- <div class="d-flex flex-nowrap bd-highlight"> -->
-      <%- include('../partials/flex-images-wrap'); %>
-    </div>
-  </main>
-  <footer>
-    <%- include('../partials/footer'); %>
-  </footer>
+    <main>
+        <div class="jumbotron">
+            <h1>Aplicação inicial utilizando templates com Express e EJS</h1>
+            <p>Seja bem-vindo e modifique conforme sua necessidade</p>
+            <!-- <div class="d-flex flex-nowrap bd-highlight"> -->
+            <%- include('../partials/flex-images-wrap'); %>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
 </body>
 
 </html>
