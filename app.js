@@ -59,6 +59,7 @@ app.get('/login', (req, res) => {
     res.render('pages/login', { req: req });
 });
 
+
 app.get('/about', (req, res) => {
     res.render('pages/about', { req: req })
 });
@@ -81,6 +82,50 @@ app.post('/login', (req, res) => {
             res.redirect('/login_failed');
         }
     });
+});
+
+// Rota para processar o formulário de caastro depostagem
+app.post('/cadastrar_posts', (req, res) => {
+    const { titulo, conteudo } = req.body;
+
+    // const query = 'SELECT * FROM users WHERE username = ? AND password = SHA1(?)';
+    const query = 'INSERT INTO posts (titulo, conteudo) VALUES (?,?)';
+
+    db.query(query, [titulo, conteudo], (err, results) => {
+        if (err) throw err;
+
+        if (results.length > 0) {
+            console.log('Cadastro de postagem OK')
+            res.redirect('/dashboard');
+        } else {
+            // res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
+            res.send('Cadastro de post não efetuado');
+        }
+    });
+});
+
+// const query = 'INSERT INTO users (username, password) VALUES (?, SHA1(?))';
+// console.log(`POST /CADASTAR -> query -> ${query}`);
+// db.query(query, [username, password], (err, results) => {
+//     console.log(results);
+//     //console.log(`POST /CADASTAR -> results -> ${results}`);
+
+//     if (err) {
+//         console.log(`ERRO NO CADASTRO: ${err}`);
+//         throw err;
+//     }
+//     if (results.affectedRows > 0) {
+//         req.session.loggedin = true;
+//         req.session.username = username;
+//         res.redirect('/register_ok');
+//     }
+// });
+
+
+// Rota para a página cadastro do post
+app.get('/cadastrar_posts', (req, res) => {
+    // Quando for renderizar páginas pelo EJS, passe parametros para ele em forma de JSON
+    res.render('pages/cadastrar_posts', { req: req });
 });
 
 // Rotas para cadastrar
